@@ -8,8 +8,8 @@ import {
   FormMessage,
   useZodForm,
 } from "@/components/ui/form";
-import { ContentTextArea } from "@/src/feature/posts/ContentTextArea";
-import { PostLayout } from "@/src/feature/posts/PostLayout";
+import { ContentTextArea } from "@/src/feature/post/ContentTextArea";
+import { PostLayout } from "@/src/feature/post/PostLayout";
 import { User } from "@prisma/client";
 import { useRouter } from "next/navigation";
 import { z } from "zod";
@@ -38,9 +38,9 @@ export const WritePostForm = ({ user, onSubmit }: WritePostFormProps) => {
         onSubmit={async (values) => {
           const postId = await onSubmit(values);
           if (postId) {
-            // window.location.href = `${window.location.origin}/posts/${postId}`;
+            window.location.href = `${window.location.origin}/posts/${postId}`;
             router.push(`/posts/${postId}`);
-            // router.refresh();
+            router.refresh();
           }
         }}>
         <FormField

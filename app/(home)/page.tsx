@@ -1,6 +1,6 @@
 import { getAuthSession } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-import { Post } from "@/src/feature/posts/Post";
+import { Post } from "@/src/feature/post/Post";
 import { getLatestPosts } from "@/src/query/post.query";
 import React from "react";
 
